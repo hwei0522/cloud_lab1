@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<style>
+
+    #A, #B, #C {
+        margin:4px, 4px;
+        padding:4px;
+        background-color: #F7F7F7;
+        width: 330px;
+        height: 260px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align:justify;
+        margin-right:10px;
+        float:left;
+    }
+
+    #A_b, #B_b, #C_b, #reset_b {
+        margin-right:10px;
+        display:inline;
+    }
+
+</style>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    
+  </head>
+  <body>
+    <div id="status">model is loading, please wait.</div>
+    
+    <div>
+        <button id="enableWebcamButton" disabled>Open the camera</button>
+        <button id="disableWebcamButton" disabled>Close the camera</button>
+    </div>
+    
+    <section id="cameraSection">
+        <div id="liveView">
+            <video id="webcam" autoplay width="320" height="240"></video>
+        </div>
+        <p id='result'>Start to classification!</p>
+    </section>
+    
+    <section id="buttom">
+        <div id="A_b">
+            <button id="class-a" disabled>Add A</button>
+        </div>
+        <div id="B_b">
+            <button id="class-b" disabled>Add B</button>
+        </div>
+        <div id="C_b">
+            <button id="class-c" disabled>Add C</button>
+        </div>
+        <div id="reset_b">
+            <button id="reset" disabled>Reset</button>
+        </div>
+    </section>
+    
+    <br>
+    <section id="training">
+        <div id="A">
+        </div>
+        <div id="B">
+        </div>
+        <div id="C">
+        </div>
+    </section>
+    
+    <script src="transferLearning.js"></script>
+  </body>
+</html>
